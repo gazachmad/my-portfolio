@@ -38,9 +38,9 @@ export const Header = () => {
                         </li>
                     </ul>
                     <ul className="list-unstyled mb-0 mt-2 mt-sm-0 social-icon">
-                        <li className="list-inline-item mr-1"><a href="#0"><i className="mdi mdi-facebook"></i></a></li>
-                        <li className="list-inline-item mr-1"><a href="#0"><i className="mdi mdi-instagram"></i></a></li>
-                        <li className="list-inline-item"><a href="#0"><i className="mdi mdi-linkedin"></i></a></li>
+                        <li className="list-inline-item mr-1"><a href="https://www.facebook.com/gazhaliachmad/" target="_blank"><i className="mdi mdi-facebook"></i></a></li>
+                        <li className="list-inline-item mr-1"><a href="https://www.instagram.com/gazachmad/" target="_blank"><i className="mdi mdi-instagram"></i></a></li>
+                        <li className="list-inline-item"><a href="https://www.linkedin.com/in/gazachmad/" target="_blank"><i className="mdi mdi-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
