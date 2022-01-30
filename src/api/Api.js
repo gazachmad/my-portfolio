@@ -19,22 +19,20 @@ export const Api = {
         let response = {
             codingActivity: {
                 categories: [],
-                series: [],
+                data: [],
                 labels: [],
             },
             languages: []
         };
-        let data = [];
         results[0].data.forEach(element => {
             let dateText = element.range.text;
             if (dateText.length > 9) {
                 dateText = element.range.text.substr(4, dateText.length - 9);
             }
             response.codingActivity.categories.push(dateText);
-            data.push(parseFloat(element.grand_total.decimal));
+            response.codingActivity.data.push(parseFloat(element.grand_total.decimal));
             response.codingActivity.labels.push(element.grand_total.text);
         });
-        response.codingActivity.series.push({ name: 'Coding', data: data })
         results[1].data.forEach((value, key) => {
             let data = { name: value.name, y: value.percent, color: value.color }
             if (key === 0) {
