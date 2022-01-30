@@ -74,7 +74,10 @@ export class Activity extends Component {
                 series: [{
                     name: 'Languages',
                     colorByPoint: true,
-                    data: []
+                    data: [{
+                        name: 1,
+                        y: 0
+                    }]
                 }]
             }
         }
@@ -174,7 +177,7 @@ export class Activity extends Component {
         });
     }
 
-    componentDidMount() {
+    UNSAFE_componentWillMount() {
         this.getData();
     }
 
