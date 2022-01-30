@@ -17,7 +17,7 @@ export class Activity extends Component {
                     text: 'Source: wakatime.com'
                 },
                 xAxis: {
-                    categories: [],
+                    categories: [1, 2, 3, 4, 5, 6, 7],
                     crosshair: true
                 },
                 yAxis: {
@@ -44,7 +44,7 @@ export class Activity extends Component {
                 },
                 series: [{
                     name: 'Coding',
-                    data: []
+                    data: [0, 0, 0, 0, 0, 0, 0]
                 }]
             },
             languages: {
