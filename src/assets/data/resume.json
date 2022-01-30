@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "waktu_bekerja": "Jul 2020 - Present",
+            "perusahaan": "Qassa Indonesia (Startup)",
+            "posisi": "Mobile Developer",
+            "deskripsi": "Aplikasi manajemen bisnis dan pencatatan keuangan untuk UMKM dan Enterprise. Aplikasi ini merupakan merupakan bagian dari fungsi besar QASSA ERP Indonesia dibagian fungsi manajemen POS untuk kasir."
+        },
+        {
+            "waktu_bekerja": "Mar 2020 - Des 2021",
+            "perusahaan": "Kumala Group",
+            "posisi": "Web Developer",
+            "deskripsi": "Membuat dan/atau melakukan pemeliharaan (maintenance) Dealer Management System. Membuat program sesuai dengan kebutuhan perusahaan."
+        },
+        {
+            "waktu_bekerja": "Jul 2016 - Mar 2020",
+            "perusahaan": "Freelance",
+            "posisi": "Mobile Developer, Web Fullstack Developer",
+            "deskripsi": ""
+        }
+    ]
+}

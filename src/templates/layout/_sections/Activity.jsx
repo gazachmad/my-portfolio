@@ -100,32 +100,24 @@ export const Activity = () => {
     }, [])
 
     return (
-        <section className="cta-full border-top">
+        <section className="section" id="activity">
             <div className="container">
-                <div className="row position-relative">
-                    <div className="col-12">
-                        <div className="cta-full-img-box">
-                            <div className="row justify-content-center">
-                                <div className="col-12 text-center">
-                                    <div className="section-title">
-                                        <div className="titles">
-                                            <h4 className="title title-line text-uppercase mb-4 pb-4">Work Expertise</h4>
-                                            <span></span>
-                                        </div>
-                                        <p className="text-muted mx-auto para-desc mb-0">Obviously I'm a Web Designer. Experienced with all stages of the development cycle for dynamic web projects.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="row align-items-center">
-                                <div className="col-md-10 col-lg-8 col-xl-6 p-0 mx-auto">
-                                    <HighchartsReact highcharts={Highcharts} options={options.codingActivity} />
-                                </div>
-                                <div className="col-md-10 col-lg-8 col-xl-6 p-0 mx-auto">
-                                    <HighchartsReact highcharts={Highcharts} options={options.languages} />
-                                </div>
+                <div className="row justify-content-center">
+                    <div className="col-12 text-center">
+                        <div className="section-title">
+                            <div className="titles">
+                                <h4 className="title title-line text-uppercase mb-4 pb-4">Coding Activity</h4>
+                                <span></span>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-10 col-lg-8 col-xl-6 p-0 mx-auto mt-4 pt-2">
+                        <HighchartsReact highcharts={Highcharts} options={options.codingActivity} />
+                    </div>
+                    <div className="col-md-10 col-lg-8 col-xl-6 p-0 mx-auto mt-4 pt-2">
+                        <HighchartsReact highcharts={Highcharts} options={options.languages} />
                     </div>
                 </div>
             </div>

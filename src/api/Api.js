@@ -1,4 +1,6 @@
 import $ from "jquery";
+import resume from "../assets/data/resume.json";
+import projects from "../assets/data/projects.json";
 
 export const Api = {
     getActivity: async () => {
@@ -37,5 +39,13 @@ export const Api = {
             response.languages.push({ name: element.name, y: element.percent, color: element.color });
         });
         return response;
+    },
+
+    getResume: () => {
+        return resume.data;
+    },
+    
+    getProjects: () => {
+        return projects.data;
     }
 }

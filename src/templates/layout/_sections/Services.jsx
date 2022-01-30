@@ -38,7 +38,6 @@ export const Services = () => {
                                 <h4 className="title title-line text-uppercase mb-4 pb-4">What Do I Offer ?</h4>
                                 <span></span>
                             </div>
-                            <p className="text-muted mx-auto para-desc mb-0">Obviously I'm a Web Designer. Experienced with all stages of the development cycle for dynamic web projects.</p>
                         </div>
                     </div>
                 </div>

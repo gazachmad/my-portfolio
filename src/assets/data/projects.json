@@ -1,0 +1,87 @@
+{
+    "data": {
+        "filter": [
+            {
+                "class": "*",
+                "title": "All"
+            },
+            {
+                "class": ".administration",
+                "title": "Administration"
+            },
+            {
+                "class": ".bussines",
+                "title": "Bussines"
+            },
+            {
+                "class": ".ecommerce",
+                "title": "Ecommerce"
+            },
+            {
+                "class": ".mobile",
+                "title": "Mobile"
+            },
+            {
+                "class": ".website",
+                "title": "Website"
+            }
+        ],
+        "items": [
+            {
+                "image": "./assets/images/projects/sipod.png",
+                "class": "administration",
+                "title": "Sistem Informasi Portal Desa (SIPOD)"
+            },
+            {
+                "image": "./assets/images/projects/qassa.png",
+                "class": "mobile bussines",
+                "title": "Qassa - Super App UMKM"
+            },
+            {
+                "image": "./assets/images/projects/dms-kumala-group.png",
+                "class": "bussines",
+                "title": "Dealer Management System (DMS) Kumala Group"
+            },
+            {
+                "image": "./assets/images/projects/dmi-sulsel.png",
+                "class": "website",
+                "title": "DMI Sulawesi Selatan"
+            },
+            {
+                "image": "./assets/images/projects/simmass-dmi-sulsel.png",
+                "class": "administration",
+                "title": "Sistem Manajemen Masjid (SIMMASS) DMI Sulawesi Selatan"
+            },
+            {
+                "image": "./assets/images/projects/carimobilku.png",
+                "class": "website",
+                "title": "Cari Mobilku"
+            },
+            {
+                "image": "./assets/images/projects/digifest-kumala-group.png",
+                "class": "ecommerce",
+                "title": "Digifest Kumala Group"
+            },
+            {
+                "image": "./assets/images/projects/kumalaku.png",
+                "class": "mobile",
+                "title": "Kumalaku"
+            },
+            {
+                "image": "./assets/images/projects/honda-kmg.png",
+                "class": "website",
+                "title": "Honda KMG Manado"
+            },
+            {
+                "image": "./assets/images/projects/kumala-group.png",
+                "class": "website",
+                "title": "Kumala Group"
+            },
+            {
+                "image": "./assets/images/portfolio/1.jpg",
+                "class": "website",
+                "title": "Sumber Mekanika Tanah"
+            }
+        ]
+    }
+}

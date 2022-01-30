@@ -5,8 +5,8 @@ export const Preloader = () => {
     useEffect(() => {
         $(window).on('load', function () {
             $('#status').fadeOut();
-            $('#preloader').delay(350).fadeOut('slow');
-            $('body').delay(350).css({
+            $('#preloader').delay(1000).fadeOut('slow');
+            $('body').delay(1000).css({
                 'overflow': 'visible'
             });
         });
