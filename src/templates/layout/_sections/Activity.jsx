@@ -5,179 +5,117 @@ import { Api } from "../../../api/Api";
 
 export class Activity extends Component {
     state = {
-        options: {
-            codingActivity: {
-                chart: {
-                    type: 'column'
-                },
-                title: {
-                    text: 'Coding Activity over Last 7 Days'
-                },
-                subtitle: {
-                    text: 'Source: wakatime.com'
-                },
-                xAxis: {
-                    categories: [1, 2, 3, 4, 5, 6, 7],
-                    crosshair: true
-                },
-                yAxis: {
-                    min: 0,
-                    title: {
-                        text: null
-                    },
-                    labels: {
-                        formatter: function () {
-                            let prefix = 'hrs';
-                            if (this.value < 2) {
-                                prefix = 'hr';
-                            }
-                            return `${this.value} ${prefix}`;
-                        }
-                    }
-                },
-                tooltip: {},
-                plotOptions: {
-                    column: {
-                        pointPadding: 0.2,
-                        borderWidth: 0,
-                    }
-                },
-                series: [{
-                    name: 'Coding',
-                    data: [0, 0, 0, 0, 0, 0, 0]
-                }]
+        codingActivity: {
+            chart: {
+                type: 'column'
             },
-            languages: {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false,
-                    type: 'pie'
-                },
+            title: {
+                text: 'Coding Activity over Last 7 Days'
+            },
+            subtitle: {
+                text: 'Source: wakatime.com'
+            },
+            xAxis: {
+                categories: [1, 2, 3, 4, 5, 6, 7],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
                 title: {
-                    text: 'Languages'
+                    text: null
                 },
-                subtitle: {
-                    text: 'Source: wakatime.com'
-                },
-                tooltip: {},
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            format: '<strong>{point.name}</strong>: {point.y} %'
-                        },
+                labels: {
+                    formatter: function () {
+                        let prefix = 'hrs';
+                        if (this.value < 2) {
+                            prefix = 'hr';
+                        }
+                        return `${this.value} ${prefix}`;
                     }
-                },
-                series: [{
-                    name: 'Languages',
-                    colorByPoint: true,
-                    data: [{
-                        name: 1,
-                        y: 0
-                    }]
-                }]
-            }
+                }
+            },
+            tooltip: {},
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0,
+                }
+            },
+            series: [{
+                name: 'Coding',
+                data: [0, 0, 0, 0, 0, 0, 0]
+            }]
+        },
+        languages: {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Languages'
+            },
+            subtitle: {
+                text: 'Source: wakatime.com'
+            },
+            tooltip: {
+                formatter: function () {
+                    return `<div>
+                        <p style="color:${this.color}">${this.key}:</p>
+                        <p><strong>${this.y} %</strong></p>
+                    </div>`;
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<strong>{point.name}</strong>: {point.y} %'
+                    },
+                }
+            },
+            series: [{
+                name: 'Languages',
+                colorByPoint: true,
+                data: [0]
+            }]
         }
     }
 
     async getData() {
         const results = await Api.getActivity();
         this.setState({
-            options: {
-                codingActivity: {
-                    chart: {
-                        type: 'column'
-                    },
-                    title: {
-                        text: 'Coding Activity over Last 7 Days'
-                    },
-                    subtitle: {
-                        text: 'Source: wakatime.com'
-                    },
-                    xAxis: {
-                        categories: results.codingActivity.categories,
-                        crosshair: true
-                    },
-                    yAxis: {
-                        min: 0,
-                        title: {
-                            text: null
-                        },
-                        labels: {
-                            formatter: function () {
-                                let prefix = 'hrs';
-                                if (this.value < 2) {
-                                    prefix = 'hr';
-                                }
-                                return `${this.value} ${prefix}`;
-                            }
-                        }
-                    },
-                    tooltip: {
-                        formatter: function () {
-                            return `<div>
+            codingActivity: {
+                xAxis: {
+                    categories: results.codingActivity.categories,
+                },
+                tooltip: {
+                    formatter: function () {
+                        return `<div>
                             <p style="font-size:11px">${this.key}</p><br/>
                             <p style="color:${this.color}">${this.series.name}: </p>
                             <p><strong>${results.codingActivity.labels[this.point.index]}</strong></p>
                         </div>`;
-                        }
-                    },
-                    plotOptions: {
-                        column: {
-                            pointPadding: 0.2,
-                            borderWidth: 0,
-                        }
-                    },
-                    series: [{
-                        name: 'Coding',
-                        data: results.codingActivity.data
-                    }]
+                    }
                 },
-                languages: {
-                    chart: {
-                        plotBackgroundColor: null,
-                        plotBorderWidth: null,
-                        plotShadow: false,
-                        type: 'pie'
-                    },
-                    title: {
-                        text: 'Languages'
-                    },
-                    subtitle: {
-                        text: 'Source: wakatime.com'
-                    },
-                    tooltip: {
-                        formatter: function () {
-                            return `<div>
-                            <p style="color:${this.color}">${this.key}:</p>
-                            <p><strong>${this.y} %</strong></p>
-                        </div>`;
-                        }
-                    },
-                    plotOptions: {
-                        pie: {
-                            allowPointSelect: true,
-                            cursor: 'pointer',
-                            dataLabels: {
-                                enabled: true,
-                                format: '<strong>{point.name}</strong>: {point.y} %'
-                            },
-                        }
-                    },
-                    series: [{
-                        name: 'Languages',
-                        colorByPoint: true,
-                        data: results.languages
-                    }]
-                }
+                series: [{
+                    data: results.codingActivity.data
+                }]
             }
         });
+        this.setState({
+            languages: {
+                series: [{
+                    data: results.languages
+                }]
+            }
+        })
     }
 
-    UNSAFE_componentWillMount() {
+    componentDidMount() {
         this.getData();
     }
 
@@ -197,10 +135,10 @@ export class Activity extends Component {
                     </div>
                     <div className="row">
                         <div className="col-md-10 col-lg-8 col-xl-6 p-0 mx-auto mt-4 pt-2">
-                            <HighchartsReact highcharts={Highcharts} options={this.state.options.codingActivity} />
+                            <HighchartsReact highcharts={Highcharts} options={this.state.codingActivity} />
                         </div>
                         <div className="col-md-10 col-lg-8 col-xl-6 p-0 mx-auto mt-4 pt-2">
-                            <HighchartsReact highcharts={Highcharts} options={this.state.options.languages} />
+                            <HighchartsReact highcharts={Highcharts} options={this.state.languages} />
                         </div>
                     </div>
                 </div>

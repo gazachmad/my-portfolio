@@ -10,8 +10,9 @@ export class Projects extends Component {
     }
 
     UNSAFE_componentWillMount() {
+        const results = Api.getProjects();
         this.setState({
-            data: Api.getProjects()
+            data: { filter: results.filter, items: results.items }
         });
     }
 
