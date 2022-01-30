@@ -35,8 +35,12 @@ export const Api = {
             response.codingActivity.labels.push(element.grand_total.text);
         });
         response.codingActivity.series.push({ name: 'Coding', data: data })
-        results[1].data.forEach(element => {
-            response.languages.push({ name: element.name, y: element.percent, color: element.color });
+        results[1].data.forEach((value, key) => {
+            let data = { name: value.name, y: value.percent, color: value.color }
+            if (key === 0) {
+                data = { sliced: true, selected: true, ...data };
+            }
+            response.languages.push(data);
         });
         return response;
     },
@@ -44,7 +48,7 @@ export const Api = {
     getResume: () => {
         return resume.data;
     },
-    
+
     getProjects: () => {
         return projects.data;
     }
