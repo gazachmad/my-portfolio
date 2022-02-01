@@ -10,7 +10,7 @@ export class Activity extends Component {
                 type: 'column'
             },
             title: {
-                text: 'Coding Activity over Last 7 Days'
+                text: 'Coding Activity'
             },
             subtitle: {
                 text: 'Source: wakatime.com'
@@ -54,7 +54,7 @@ export class Activity extends Component {
                 type: 'pie'
             },
             title: {
-                text: 'Languages'
+                text: 'Languages over Last 7 Days'
             },
             subtitle: {
                 text: 'Source: wakatime.com'
