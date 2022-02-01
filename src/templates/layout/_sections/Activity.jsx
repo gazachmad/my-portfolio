@@ -10,7 +10,7 @@ export class Activity extends Component {
                 type: 'column'
             },
             title: {
-                text: 'Coding Activity'
+                text: 'Coding Activity over Last 7 Days'
             },
             subtitle: {
                 text: 'Source: wakatime.com'
